@@ -1,0 +1,28 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chg122345/cloud-config-repository.git
+          basedir: cloud-config/target/config
+        native:
+          default-label: master
+#  rabbitmq:
+#    host: localhost
+#    username: chg122345
+#    password: chg122345
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

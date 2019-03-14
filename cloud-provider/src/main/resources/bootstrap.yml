@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: provider-8010
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: prod
+      fail-fast: true
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+    fetch-registry: true
+  instance:
+    instance-id: provider-8010
+    prefer-ip-address: true
+
